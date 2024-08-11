@@ -1,27 +1,25 @@
-(function(){
+(function () {
+	'use strict';
 
-	'use strict'
-
-
-	var siteMenuClone = function() {
+	var siteMenuClone = function () {
 		var jsCloneNavs = document.querySelectorAll('.js-clone-nav');
-		var siteMobileMenuBody = document.querySelector('.site-mobile-menu-body');
-		
+		var siteMobileMenuBody = document.querySelector(
+			'.site-mobile-menu-body'
+		);
 
-
-		jsCloneNavs.forEach(nav => {
+		jsCloneNavs.forEach((nav) => {
 			var navCloned = nav.cloneNode(true);
 			navCloned.setAttribute('class', 'site-nav-wrap');
 			siteMobileMenuBody.appendChild(navCloned);
 		});
 
-		setTimeout(function(){
-
-			var hasChildrens = document.querySelector('.site-mobile-menu').querySelectorAll(' .has-children');
+		setTimeout(function () {
+			var hasChildrens = document
+				.querySelector('.site-mobile-menu')
+				.querySelectorAll(' .has-children');
 
 			var counter = 0;
-			hasChildrens.forEach( hasChild => {
-				
+			hasChildrens.forEach((hasChild) => {
 				var refEl = hasChild.querySelector('a');
 
 				var newElSpan = document.createElement('span');
@@ -32,7 +30,10 @@
 
 				var arrowCollapse = hasChild.querySelector('.arrow-collapse');
 				arrowCollapse.setAttribute('data-bs-toggle', 'collapse');
-				arrowCollapse.setAttribute('data-bs-target', '#collapseItem' + counter);
+				arrowCollapse.setAttribute(
+					'data-bs-target',
+					'#collapseItem' + counter
+				);
 
 				var dropdown = hasChild.querySelector('.dropdown');
 				dropdown.setAttribute('class', 'collapse');
@@ -40,18 +41,16 @@
 
 				counter++;
 			});
-
 		}, 1000);
-
 
 		// Click js-menu-toggle
 
-		var menuToggle = document.querySelectorAll(".js-menu-toggle");
+		var menuToggle = document.querySelectorAll('.js-menu-toggle');
 		var mTog;
-		menuToggle.forEach(mtoggle => {
+		menuToggle.forEach((mtoggle) => {
 			mTog = mtoggle;
-			mtoggle.addEventListener("click", (e) => {
-				if ( document.body.classList.contains('offcanvas-menu') ) {
+			mtoggle.addEventListener('click', (e) => {
+				if (document.body.classList.contains('offcanvas-menu')) {
 					document.body.classList.remove('offcanvas-menu');
 					mtoggle.classList.remove('active');
 					mTog.classList.remove('active');
@@ -61,30 +60,42 @@
 					mTog.classList.add('active');
 				}
 			});
-		})
+		});
 
-
-
-		var specifiedElement = document.querySelector(".site-mobile-menu");
+		var specifiedElement = document.querySelector('.site-mobile-menu');
 		var mt, mtoggleTemp;
-		document.addEventListener('click', function(event) {
+		document.addEventListener('click', function (event) {
 			var isClickInside = specifiedElement.contains(event.target);
-			menuToggle.forEach(mtoggle => {
-				mtoggleTemp = mtoggle
+			menuToggle.forEach((mtoggle) => {
+				mtoggleTemp = mtoggle;
 				mt = mtoggle.contains(event.target);
-			})
+			});
 
 			if (!isClickInside && !mt) {
-				if ( document.body.classList.contains('offcanvas-menu') ) {
+				if (document.body.classList.contains('offcanvas-menu')) {
 					document.body.classList.remove('offcanvas-menu');
 					mtoggleTemp.classList.remove('active');
 				}
 			}
-
 		});
+	};
 
-	}; 
+	let images = [
+		'images/daily_gloss.webp',
+		'images/makeup.webp',
+		'images/daily_gloss.webp',
+		'images/victoria_secret.jpeg',
+	];
+	let container = document.getElementById('hero');
+	let i = 0;
+	setInterval(function () {
+		var newImg = "url('" + images[i] + "')";
+		container.style.background = newImg;
+		i = i + 1;
+		if (i == images.length) {
+			i = 0;
+		}
+	}, 4000);
+
 	siteMenuClone();
-
-
-})()
+})();

@@ -8262,7 +8262,7 @@ fieldset:disabled .btn {
 }
 
 .bg-dark {
-	background-color: #212529 !important;
+	background-color: #000000 !important;
 }
 
 .bg-body {
@@ -11379,9 +11379,15 @@ fieldset:disabled .btn {
 	font-size: 24px;
 	color: #fff;
 	font-weight: 700;
+	img {
+	}
 }
 .logo:hover {
 	color: #fff;
+}
+
+.logo img {
+	width: 200px;
 }
 
 .site-nav {
@@ -11993,8 +11999,22 @@ a:hover {
 	color: #000;
 }
 
+#hero {
+	height: 100vh;
+	width: 100%;
+	/* background: linear-gradient(rgba(0, 0, 0, 0.342), rgba(0, 0, 0, 0.342)), url(images/daily_gloss.webp) fixed no-repeat center / cover;
+	color: #fff9ff; */
+	transition: opacity 1s;
+	/* background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative; */
+}
+
 .hero,
 .bg-image {
+	height: 100vh;
+	width: 100%;
 	background-color: #000;
 	background-size: cover;
 	background-position: center center;
@@ -13012,9 +13032,9 @@ a:hover {
 	margin-bottom: 15px;
 	color: #ffffff;
 }
-.site-footer .widget .links {
+/* .site-footer .widget .links {
 	width: 150px;
-}
+} */
 .site-footer .widget .links li {
 	margin-bottom: 10px;
 }
