@@ -35,7 +35,7 @@
 	--bs-danger: #dc3545;
 	--bs-light: #f8f9fa;
 	--bs-dark: #212529;
-	--bs-font-sans-serif: 'Playfair Display', sans-serif;
+	--bs-font-sans-serif: 'Roboto', sans-serif;
 	--bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
 		'Liberation Mono', 'Courier New', monospace;
 	--bs-gradient: linear-gradient(
@@ -12066,7 +12066,7 @@ a:hover {
 	font-size: 90px;
 	font-weight: 700;
 	line-height: 1;
-	font-family: 'Playfair Display', serif;
+	font-family: 'Roboto', sans-serif;
 }
 @media (max-width: 991.98px) {
 	.heading-2 {
@@ -12083,7 +12083,7 @@ a:hover {
 	font-size: 20px;
 	font-weight: 700;
 	line-height: 1;
-	font-family: 'Playfair Display', serif;
+	font-family: 'Roboto', sans-serif;
 }
 @media (max-width: 991.98px) {
 	.heading-2 {
